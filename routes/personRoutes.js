@@ -23,7 +23,7 @@ router.post('/', async(req, res) => {
     }
 })
 
-router.get('/todos', async (req, res) => {
+router.get('/all', async (req, res) => {
     //Trazer todos os dados da requisicao
     const {name, salary, approved} = req.body
     try {

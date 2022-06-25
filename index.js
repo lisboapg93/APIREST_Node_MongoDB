@@ -11,9 +11,7 @@ app.use(
     }),
 )
 
-
 app.use(express.json())
-
 
 const personRoutes = require('./routes/personRoutes')
 
@@ -29,11 +27,9 @@ app.get('/home', (req, res) => {
 const DB_USER = process.env.DB_USER
 const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
 
-
 mongoose
     .connect(
         `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.ydbbxhy.mongodb.net/?retryWrites=true&w=majority`,
-        
 )
 .then(() => {
     console.log('Conectamos ao mongo!')
