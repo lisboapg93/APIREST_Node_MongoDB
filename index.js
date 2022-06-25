@@ -3,6 +3,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
+const port = process.env.PORT ||3000;
+
 app.use(
     express.urlencoded({
         extended: true,
@@ -35,7 +37,10 @@ mongoose
 )
 .then(() => {
     console.log('Conectamos ao mongo!')
-    app.listen(3000)
 })
 .catch((err) => console.log(err))
+
+app.listen(port, () => {
+    console.info(`Aplicacao rodando em http://localhost:${port}`);
+});
 
