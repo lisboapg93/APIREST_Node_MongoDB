@@ -20,7 +20,7 @@ const personRoutes = require('./routes/personRoutes')
 app.use('/person', personRoutes)
 
 //rota inicial / endpoint
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
 //mostrar req
 
     res.json({message: 'Oi, esta funcionando!'})
@@ -41,6 +41,6 @@ mongoose
 .catch((err) => console.log(err))
 
 app.listen(port, () => {
-    console.info(`Aplicacao rodando em http://localhost:${port}`);
+    console.info(`Aplicacao rodando em http://localhost:${port}/home`);
 });
 

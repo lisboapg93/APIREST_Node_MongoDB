@@ -23,6 +23,18 @@ router.post('/', async(req, res) => {
     }
 })
 
+router.get('/todos', async (req, res) => {
+    //Trazer todos os dados da requisicao
+    const {name, salary, approved} = req.body
+    try {
+        const person = await Person.find({})
+        res.status(200).json(person)
+    } catch (error) {
+        res.status(500).json({ error: error})
+    }
+})
+
+
 router.get('/:id', async (req, res) => {
     //extrair os dados da requisicao
     const id = req.params.id
